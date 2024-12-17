@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World & 背景反色</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            transition: all 0.5s ease; /* 添加平滑效果 */
+        }
+
+        #message {
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="message">点击页面任意位置</div>
+
+    <script>
+        // 初始化状态：背景是否为反色
+        let isInverted = false;
+
+        // 事件监听器：点击页面时触发
+        document.body.addEventListener('click', () => {
+            // 输出 "Hello World"
+            document.getElementById('message').innerText = 'Hello World';
+
+            // 切换背景颜色和文字颜色
+            if (isInverted) {
+                document.body.style.backgroundColor = 'white';
+                document.body.style.color = 'black';
+            } else {
+                document.body.style.backgroundColor = 'black';
+                document.body.style.color = 'white';
+            }
+
+            // 更新反色状态
+            isInverted = !isInverted;
+        });
+    </script>
+</body>
+</html>
