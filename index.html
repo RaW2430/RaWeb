@@ -1,97 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>玛纳斯：烽火长歌</title>
+    <title>颜色循环</title>
     <style>
+        /* 设置全屏背景 */
         body {
-            font-family: 'Courier New', Courier, monospace;
-            background-color: #7B2F2F;
-            color: #FFFFFF;
             margin: 0;
-            padding: 20px;
-        }
-
-        h1, h2 {
-            color: #FFFFFF;
-        }
-
-        .features, .credits, .download, .comments {
-            margin-top: 20px;
-        }
-
-            .download button, .download a.download-button {
-                background-color: #FF6347;
-                color: #FFFFFF;
-                border: none;
-                padding: 10px 20px;
-                margin: 5px 0;
-                cursor: pointer;
-                text-decoration: none; /* 移除链接下划线 */
-                display: inline-block; /* 使链接像按钮一样显示 */
-            }
-
-                .download button:hover, .download a.download-button:hover {
-                    background-color: #FF4500;
-                }
-
-        .images {
+            height: 100vh;
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 20px;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: background-color 0.5s ease;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 48px;
         }
 
-            .images img {
-                width: calc(50% - 10px);
-                height: auto;
-            }
+        /* 中心文本样式 */
+        #currentColor {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
-    <h1>玛纳斯：烽火长歌</h1>
-    <p>《玛纳斯：烽火长歌》（《Manas: Ballad of the Beacon》） 是一款以中国少数民族三大史诗之一的柯尔克孜族英雄史诗《玛纳斯史诗》为蓝本的音乐叙事游戏。玩家将化身传奇“玛纳斯奇”传唱英雄“玛纳斯”的故事，在铁蹄与琴弦交织的战场上，通过跑酷闪避、节奏斩击与民族乐符解谜，重现英雄守护柯尔克孜民族的壮丽旅程。</p>
-    <h1>概念设计</h1>
-    <div class="images">
-        <img src="Images/InGameFootage/fro1.png" alt="Image 5">
-        <img src="Images/InGameFootage/fro2.png" alt="Image 6">
-        <img src="Images/InGameFootage/fro3.png" alt="Image 7">
-        <img src="Images/InGameFootage/fro4.png" alt="Image 8">
-    </div>
-    <h1>实机画面</h1>
-    <div class="images">
-        <img src="Images/InGameFootage/s1.png" alt="Image 1">
-        <img src="Images/InGameFootage/s2.png" alt="Image 2">
-        <img src="Images/InGameFootage/s3.png" alt="Image 3">
-        <img src="Images/InGameFootage/s4.png" alt="Image 4">
-    </div>
 
-    <!--<div class="features">
-        <h2>Features:</h2>
-        <ul>
-            <li>Traverse hell in search of love.</li>
-            <li>Win the hearts of horrible demon girls.</li>
-            <li>Kick adorable skeletons around.</li>
-            <li>Solve puzzles as efficiently as possible.</li>
-            <li>Or just skip puzzles in the menu.</li>
-            <li>Try to not get murdered by demon girls.</li>
-            <li>Get murdered by demon girls anyway.</li>
-        </ul>
-    </div>-->
+    <!-- 显示当前颜色的文本 -->
+    <div id="currentColor">红色</div>
 
-    <div class="credits">
-        <h1>制作人员</h1>
-        <p>主程：RaW (It's me!)</p>
-        <p>策划：Qianyi</p>
-        <p>美术：XErLaPg</p>
-    </div>
+    <script>
+        // 定义颜色数组和初始索引
+        const colors = ['red', 'yellow', 'blue'];
+        let currentIndex = 0;
 
-    <div class="download">
-        <h1>游戏下载</h1>
-        <a href="Download/ManasV1.zip" download="ManasV1.zip" class="download-button">下载 Manas.zip</a>
-    </div>
+        // 获取body元素和显示颜色的元素
+        const body = document.body;
+        const colorText = document.getElementById('currentColor');
 
+        // 添加点击事件监听器
+        body.addEventListener('click', () => {
+            // 切换到下一个颜色
+            currentIndex = (currentIndex + 1) % colors.length;
+            const currentColor = colors[currentIndex];
+
+            // 设置背景颜色
+            body.style.backgroundColor = currentColor;
+
+            // 更新显示的颜色名称
+            colorText.textContent = getColorName(currentColor);
+        });
+
+        /**
+         * 根据颜色代码返回中文颜色名称
+         * @param {string} color - 颜色代码（如 'red'）
+         * @returns {string} 中文颜色名称
+         */
+        function getColorName(color) {
+            const colorMap = {
+                'red': '红色',
+                'yellow': '黄色',
+                'blue': '蓝色'
+            };
+            return colorMap[color] || color; // 如果颜色不在映射中，返回原颜色代码
+        }
+    </script>
 
 </body>
 </html>
