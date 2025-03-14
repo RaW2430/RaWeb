@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RaW的主页</title>
+    <style>        
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #7B2F2F;
+            color: #FFFFFF;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #FFFFFF;
+        }
+
+        .features, .credits, .download, .comments {
+            margin-top: 20px;
+        }
+
+            .download button, .download a.download-button {
+                background-color: #FF6347;
+                color: #FFFFFF;
+                border: none;
+                padding: 10px 20px;
+                margin: 5px 0;
+                cursor: pointer;
+                text-decoration: none; /* 移除链接下划线 */
+                display: inline-block; /* 使链接像按钮一样显示 */
+            }
+
+                .download button:hover, .download a.download-button:hover {
+                    background-color: #FF4500;
+                }
+
+        .images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+            .images img {
+                width: calc(50% - 10px);
+                height: auto;
+            }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+            .navbar a {
+                color: white;
+                text-decoration: none;
+                padding: 10px 20px;
+            }
+
+                .navbar a:hover {
+                    background-color: rgba(255, 255, 255, 0.2);
+                }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navtitle"><strong>RaW</strong></div>
+        <a href="index.html">《玛纳斯：烽火长歌》</a>
+        <a href="BubbleUp.html">《Bubble Up!》- GGJ</a>
+        <!--<a href="AngryBird.html">《愤怒的小鸟》</a>
+        <a href="Breakout.html">《Breakout!》</a>-->
+        <!--<a href="join.html">JOIN</a>-->
+        <div class="navanim home"></div>
+        <div class="none"></div>
+    </nav>
+
+    <h1>玛纳斯：烽火长歌</h1>
+    <p>《玛纳斯：烽火长歌》（《Manas: Ballad of the Beacon》） 是一款以中国少数民族三大史诗之一的柯尔克孜族英雄史诗《玛纳斯史诗》为蓝本的音乐叙事游戏。玩家将化身传奇“玛纳斯奇”传唱英雄“玛纳斯”的故事，在铁蹄与琴弦交织的战场上，通过跑酷闪避、节奏斩击与民族乐符解谜，重现英雄守护柯尔克孜民族的壮丽旅程。</p>
+    <h1>概念设计</h1>
+    <div class="images">
+        <img src="Images/Manas/InGameFootage/fro1.png" alt="Image 5">
+        <img src="Images/Manas/InGameFootage/fro2.png" alt="Image 6">
+        <img src="Images/Manas/InGameFootage/fro3.png" alt="Image 7">
+        <img src="Images/Manas/InGameFootage/fro4.png" alt="Image 8">
+    </div>
+    <h1>实机画面</h1>
+    <div class="images">
+        <img src="Images/Manas/InGameFootage/s1.png" alt="Image 1">
+        <img src="Images/Manas/InGameFootage/s2.png" alt="Image 2">
+        <img src="Images/Manas/InGameFootage/s3.png" alt="Image 3">
+        <img src="Images/Manas/InGameFootage/s4.png" alt="Image 4">
+    </div>
+
+    <!--<div class="features">
+        <h2>Features:</h2>
+        <ul>
+            <li>Traverse hell in search of love.</li>
+            <li>Win the hearts of horrible demon girls.</li>
+            <li>Kick adorable skeletons around.</li>
+            <li>Solve puzzles as efficiently as possible.</li>
+            <li>Or just skip puzzles in the menu.</li>
+            <li>Try to not get murdered by demon girls.</li>
+            <li>Get murdered by demon girls anyway.</li>
+        </ul>
+    </div>-->
+
+    <div class="credits">
+        <h1>制作人员</h1>
+        <p>主程：RaW (It's me!)</p>
+        <p>策划：Qianyi</p>
+        <p>美术：XErLaPg</p>
+    </div>
+
+    <div class="download">
+        <h1>游戏下载</h1>
+        <a href="Download/ManasV1.zip" download="ManasV1.zip" class="download-button">下载 Manas.zip</a>
+    </div>
+
+
+</body>
+</html>

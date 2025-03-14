@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>It's MyRaW!!!!!</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+            .navbar a {
+                color: white;
+                text-decoration: none;
+                padding: 10px 20px;
+            }
+
+                .navbar a:hover {
+                    background-color: rgba(255, 255, 255, 0.2);
+                }
+
+        .content {
+            padding: 20px;
+            color: white;
+            display: none;
+        }
+
+            .content.active {
+                display: block;
+            }
+    </style>
+</head>
+<body>
+    <!--顶部导航栏-->
+    <div class="navbar">
+        <div class="logo">RaW</div>
+        <div class="nav-links">
+            <a href="#news" onclick="showText('manas'); showPage('Manas')">《玛纳斯：烽火长歌》</a>
+            <a href="#resonance" onclick="showText('bubble'); showPage('BubbleUp')">《Bubble Up!》</a>
+            <a href="#info" onclick="showText('angry bird'); showPage('AngryBirds')">《愤怒的小鸟》</a>
+            <a href="#world" onclick="showText('break out'); showPage('Breakout')">《Break Out!》</a>
+            <!--<a href="#community" onclick="showContent('community')">静音</a>
+            <a href="#recharge" onclick="showContent('recharge')">空</a>-->
+        </div>
+    </div>
+
+    <div id="pageContent" class="content">
+
+    </div>
+
+    <script>
+        function showContent(id) {
+            // 隐藏所有内容
+            var contents = document.querySelectorAll('.content');
+            contents.forEach(function (content) {
+                content.classList.remove('active');
+            });
+
+            // 显示当前点击的内容
+            var activeContent = document.getElementById(id);
+            if (activeContent) {
+                activeContent.classList.add('active');
+            }
+        }
+        function showText(text) {
+            // 创建新的文本元素
+            var textElement = document.createElement('div');
+            textElement.innerText = text;
+            textElement.style.position = 'fixed';
+            textElement.style.top = '50%';
+            textElement.style.left = '50%';
+            textElement.style.transform = 'translate(-50%, -50%)';
+            textElement.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+            textElement.style.color = 'white';
+            textElement.style.padding = '10px 20px';
+            textElement.style.borderRadius = '5px';
+            textElement.style.zIndex = '1000';
+
+            document.body.appendChild(textElement);
+        }
+
+        function showPage(titles) {
+            var pageContent = document.getElementById('pageContent');
+            var contentHTML = '';
+
+            if (titles.includes('Manas')) {
+                contentHTML += `
+                        <div>
+                            <h2>标题一</h2>
+                            <img src="image1.jpg" alt="Image 1">
+                            <p>这是标题一的说明文字。</p>
+                        </div>
+                    `;
+            }
+            if (titles.includes('BubbleUp')) {
+                contentHTML += `
+                        <div>
+                            <h2>标题二</h2>
+                            <img src="image2.jpg" alt="Image 2">
+                            <p>这是标题二的说明文字。</p>
+                        </div>
+                    `;
+            }
+            if (titles.includes('AngryBirds')) {
+                contentHTML += `
+                        <div>
+                            <h2>标题三</h2>
+                            <img src="image3.jpg" alt="Image 3">
+                            <p>这是标题三的说明文字。</p>
+                        </div>
+                    `;
+            }
+            if (titles.includes('Breakout')) {
+                contentHTML += `
+                        <div>
+                            <h2>标题四</h2>
+                            <img src="image4.jpg" alt="Image 4">
+                            <p>这是标题四的说明文字。</p>
+                        </div>
+                    `;
+            }
+
+            pageContent.innerHTML = contentHTML;
+            pageContent.classList.add('active');
+        }
+    </script>
+</body>
+</html>
